@@ -14,7 +14,7 @@
                                     <h1 class="intro-title mb-4">
                                         <span class="color-b">{{$rs->title}} </span></h1>
                                     <p class="intro-subtitle intro-price">
-                                        <a href="{{route('transfer',['id' => $rs->id,'slug' => $rs->slug])}}"><span class="price-a">İNCELE | ₺ {{$rs->km_price}}</span></a>
+                                        <a href="{{route('transfer',['id' => $rs->id,'slug' => $rs->slug])}}"><span class="price-a">İNCELE | ₺ {{$rs->base_price}}</span></a>
                                     </p>
                                 </div>
                             </div>

@@ -24,10 +24,10 @@ class HomeController extends Controller
     }
     public function index(){
         $setting=Setting::first();
-        $slider=Transfer::select('id','title','image','slug','km_price','category_id')->limit(4)->get();
-        $daily=Transfer::select('id','title','image','slug','km_price','category_id')->limit(4)->inRandomOrder()->get();
-        $last=Transfer::select('id','title','image','slug','km_price','category_id')->orderByDesc('id')->get();
-        $picked=Transfer::select('id','title','image','slug','km_price','category_id')->inRandomOrder()->get();
+        $slider=Transfer::select('id','title','image','slug','base_price','category_id')->limit(4)->get();
+        $daily=Transfer::select('id','title','image','slug','base_price','category_id')->limit(4)->inRandomOrder()->get();
+        $last=Transfer::select('id','title','image','slug','base_price','category_id')->orderByDesc('id')->get();
+        $picked=Transfer::select('id','title','image','slug','base_price','category_id')->inRandomOrder()->get();
         $data=[
             'setting'=>$setting,
             'daily'=>$daily,

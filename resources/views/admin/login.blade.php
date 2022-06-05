@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Login V1</title>
+    <title>ADMIN PANEL GİRİŞİ</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
@@ -35,7 +35,7 @@
             <form action="{{route('admin_logincheck')}}" method="post" class="login100-form validate-form">
                 @csrf
                 <span class="login100-form-title">
-						Member Login
+						TRANSFER SİTESİ ADMİN PANELİ
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
