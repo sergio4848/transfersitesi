@@ -13,6 +13,7 @@ use App\Models\Setting;
 use App\Models\Transfer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Location;
 
 class HomeController extends Controller
 {
@@ -49,8 +50,9 @@ class HomeController extends Controller
         $data=Transfer::find($id);
         $images=Image::where('transfer_id',$id)->get();
         $reviews=Review::where('transfer_id',$id)->get();
+        $location=Location::all();
 
-        return view('home.transfer_detail',['setting'=>$setting,'data'=>$data,'images'=>$images,'reviews'=>$reviews]);
+        return view('home.transfer_detail',['setting'=>$setting,'data'=>$data,'images'=>$images,'reviews'=>$reviews,'location'=>$location]);
 
     }
     public function categorytransfers($id,$slug){
@@ -133,18 +135,29 @@ class HomeController extends Controller
     public function sendreserve(Request $request,$id)
     {
         $data = new Reserve;
-
         $data->user_id = Auth::id();
         $transfer = Transfer::find($id);
-        $data->transfer_id=$id;
-        $data->people = $request->input('people');
-        $data->startDate = $request->input('startDate');
+        $data->fromlocation = $request->input('fromlocation');
+        $data->tolocation = $request->input('tolocation');
+        $data->transfer_id = $id;
+        $data->flightDate = $request->input('flightDate');
+        $data->flightTime = $request->input('flightTime');
+        $data->pickupTime = $request->input('pickupTime');
+
+
+        $data->price=$transfer->base_price * $transfer->km_price;
+
+
+
+
         $data->IP = $_SERVER['REMOTE_ADDR'];
-        $data->amount=$data->people*$transfer->km_price;
         $data->save();
 
         return redirect()->route('transfer',['id'=>$transfer->id,'slug'=>$transfer->slug])->with('success','Rezervasyonunuz kaydedilmiştir');
     }
+
+
+
     public function faq(){
         $setting=Setting::first();
         $datalist=Faq::all()->sortBy('position');

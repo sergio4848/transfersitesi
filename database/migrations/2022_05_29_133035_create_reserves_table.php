@@ -17,9 +17,8 @@ return new class extends Migration
             $table->id()->autoIncrement();
             $table->integer('user_id');
             $table->integer('transfer_id');
-            $table->integer('from_location_id');
-            $table->integer('to_location_id');
-            $table->string('airline',50);
+            $table->string('from_location_id',100);
+            $table->string('to_location_id',100);
             $table->float('price');
             $table->date('flightDate');
             $table->time('flightTime');

@@ -37,15 +37,18 @@
                                     </div>
                                     <div class="testimonials-content">
                                         <p class="testimonial-text">
-                                            KİŞİ SAYISI:{{$rs->people}}<br>
+                                            FLIGHT TIME:<b>{{$rs->flightTime}}</b><br>
+                                            PICKUP TIME:<b>{{$rs->pickupTime}}</b> <br>
+                                            FROM:<b>{{$rs->fromlocation}}</b> <br>
+                                            TO:<b>{{$rs->tolocation}}</b> <br>
+                                            NOTE:<b>{{$rs->note}}</b> <br>
 
-                                            FİYAT:{{$rs->amount}} ₺<br>
                                             OLUŞTURULMA TARİHİ:{{$rs->created_at}}<br>
                                             REZERVASYON DURUMU:{{$rs->status}}<br>
                                         </p>
                                     </div>
                                     <div class="testimonial-author-box">
-                                        <h5 class="testimonial-author">REZERVASYON TARİHİ:{{$rs->startDate}}</h5>
+                                        <h5 class="testimonial-author">UÇUŞ TARİHİ:{{$rs->flightDate}}</h5>
                                     </div>
                                 </div>
                         </div>

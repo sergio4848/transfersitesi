@@ -29,7 +29,7 @@
             <li>
                 <a href="{{route('admin_transfers')}}">
                     <i class="tim-icons icon-pin"></i>
-                    <p>PAKETLER</p>
+                    <p>TRANSFERLER</p>
                 </a>
             </li>
             <li>

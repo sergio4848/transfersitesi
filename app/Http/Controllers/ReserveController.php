@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use App\Models\Reserve;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ReserveController extends Controller
 {
@@ -15,8 +15,8 @@ class ReserveController extends Controller
      */
     public function index()
     {
-        $datalist=Reserve::all();
-        return view('admin.reserve',['datalist'=>$datalist]);
+        $datalist=Reserve::where('user_id',Auth::id())->get();
+        return view('home.user_reserves',['datalist'=>$datalist]);
     }
 
     /**
@@ -48,8 +48,7 @@ class ReserveController extends Controller
      */
     public function show($id)
     {
-        $data=Reserve::find($id);
-        return view('admin.reserve_edit',['data'=>$data]);
+        //
     }
 
     /**
@@ -72,11 +71,7 @@ class ReserveController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=Reserve::find($id);
-        $data->status=$request->input('status');
-        $data->note=$request->input('note');
-        $data->save();
-        return back()->with('success','Reserve Updated');
+        //
     }
 
     /**
@@ -87,8 +82,6 @@ class ReserveController extends Controller
      */
     public function destroy($id)
     {
-        $data=Reserve::find($id);
-        $data->delete();
-        return redirect()->back()->with('success','Reserve Deleted!');
+        //
     }
 }

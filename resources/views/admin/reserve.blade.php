@@ -19,10 +19,12 @@
                                     <thead class=" text-primary">
                                     <th>Id</th>
                                     <th>User</th>
-                                    <th>transfer</th>
-                                    <th>Start Date</th>
-                                    <th>People</th>
-                                    <th>Amount</th>
+                                    <th>Transfer</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Flight Time</th>
+                                    <th>Flight Date</th>
+                                    <th>Pickup Time</th>
                                     <th>Date</th>
                                     <th>Status</th>
 
@@ -42,13 +44,19 @@
                                                 <a href="{{route('transfer',['id'=>$rs->transfer->id,'slug'=>$rs->transfer->slug])}}" target="_blank">{{$rs->transfer->title}}</a>
                                             </td>
                                             <td>
-                                                {{$rs->startDate}}
+                                                {{$rs->fromlocation}}
                                             </td>
                                             <td>
-                                                {{$rs->people}}
+                                                {{$rs->tolocation}}
                                             </td>
                                             <td>
-                                                {{$rs->amount}} ₺
+                                                {{$rs->flightTime}}
+                                            </td>
+                                            <td>
+                                                {{$rs->flightDate}}
+                                            </td>
+                                            <td>
+                                                {{$rs->pickupTime}}
                                             </td>
                                             <td>
                                                 {{$rs->created_at}}

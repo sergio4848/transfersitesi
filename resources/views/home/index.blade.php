@@ -22,7 +22,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">En Son Eklenen Turlar</h2>
+                            <h2 class="title-a">En Son Eklenen Transferler</h2>
                         </div>
                         <div class="title-link">
 
@@ -83,7 +83,7 @@
                 <div class="col-md-12">
                     <div class="title-wrap d-flex justify-content-between">
                         <div class="title-box">
-                            <h2 class="title-a">Rastgele Turlar</h2>
+                            <h2 class="title-a">Rastgele Transferler</h2>
                         </div>
 
                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Tur Detayları '.$data->title)
+@section('title', 'Transfer Detayları '.$data->title)
 
 @section('description'){{$data->description}}@endsection
 
@@ -67,16 +67,47 @@
                                             <div class="row">
                                                 <div class="col-md-12 mb-1">
                                                     <div class="form-group">
-                                                        <input type="date" class="form-control form-control-lg form-control-a" id="startDate" name="startDate"
+                                                        <input type="date" class="form-control form-control-lg form-control-a" id="flightDate" name="flightDate"
                                                                required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 mb-1">
                                                     <div class="form-group">
-                                                        <input type="number" class="form-control form-control-lg form-control-a" id="people" name="people"
-                                                               placeholder="People" required>
+                                                        <input type="time" class="form-control form-control-lg form-control-a" id="flightTime" name="flightTime"
+                                                               required>
                                                     </div>
                                                 </div>
+                                                <div class="col-md-12 mb-1">
+                                                    <div class="form-group">
+                                                        <input type="time" class="form-control form-control-lg form-control-a" id="pickupTime" name="pickupTime"
+                                                               required>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 mb-1">
+                                                    <div class="form-group">
+                                                        <th><b>Nereden</b></th>
+                                                            <td>
+                                                                <select name="fromlocation" id="fromlocation">
+                                                                    @foreach($location as $rs)
+                                                                    <option>{{$rs->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </td>
+                                                    </div>
+                                                    <div class="col-md-12 mb-1">
+                                                        <div class="form-group">
+                                                            <th><b>Nereye</b></th>
+                                                            <td>
+                                                                <select name="tolocation" id="tolocation">
+                                                                    @foreach($location as $rs)
+                                                                        <option>{{$rs->name}}</option>
+                                                                    @endforeach
+                                                                </select>
+                                                            </td>
+                                                        </div>
+                                                </div>
+
+
 
                                                 <div class="col-md-12">
                                                     <button type="submit" class="btn btn-a">Rezervasyon Yap</button>

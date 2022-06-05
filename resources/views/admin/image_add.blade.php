@@ -31,7 +31,7 @@
                 <div class="card-body">
 
                     <div style="width:200px; height: 600px;">
-                        <form action="{{route('admin_image_store',['package_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('admin_image_store',['transfer_id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <table>
 
@@ -68,7 +68,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a href="{{route('admin_image_delete',['id'=>$rs->id,'package_id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')"><img src="{{asset('assets/admin/assets/images')}}/delete.png" height="30"></a>
+                                        <a href="{{route('admin_image_delete',['id'=>$rs->id,'transfer_id'=>$data->id])}}" onclick="return confirm('Delete ! Are you sure?')"><img src="{{asset('assets/admin/assets/images')}}/delete.png" height="30"></a>
                                     </td>
                                 </tr>
                             @endforeach
