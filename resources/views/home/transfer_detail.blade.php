@@ -45,7 +45,7 @@
                                         <span class="ion-money">₺</span>
                                     </div>
                                     <div class="card-title-c align-self-center">
-                                        <h5 class="title-c">{{$data->km_price}}</h5>
+                                        <h5 class="title-c">{{$data->base_price}}</h5>
                                     </div>
                                 </div>
                             </div>
@@ -67,18 +67,21 @@
                                             <div class="row">
                                                 <div class="col-md-12 mb-1">
                                                     <div class="form-group">
+                                                        <h4><b>UÇUŞ TARİHİ</b></h4>
                                                         <input type="date" class="form-control form-control-lg form-control-a" id="flightDate" name="flightDate"
                                                                required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 mb-1">
                                                     <div class="form-group">
+                                                        <h4><b>UÇUŞ SAATİ</b></h4>
                                                         <input type="time" class="form-control form-control-lg form-control-a" id="flightTime" name="flightTime"
                                                                required>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-12 mb-1">
                                                     <div class="form-group">
+                                                        <h4><b>PICK UP TIME</b></h4>
                                                         <input type="time" class="form-control form-control-lg form-control-a" id="pickupTime" name="pickupTime"
                                                                required>
                                                     </div>
@@ -94,9 +97,10 @@
                                                                 </select>
                                                             </td>
                                                     </div>
-                                                    <div class="col-md-12 mb-1">
-                                                        <div class="form-group">
-                                                            <th><b>Nereye</b></th>
+
+                                                <div class="col-md-12 mb-1">
+                                                    <div class="form-group">
+                                                        <th><b>Nereye</b></th>
                                                             <td>
                                                                 <select name="tolocation" id="tolocation">
                                                                     @foreach($location as $rs)
@@ -104,7 +108,7 @@
                                                                     @endforeach
                                                                 </select>
                                                             </td>
-                                                        </div>
+                                                    </div>
                                                 </div>
 
 
@@ -179,6 +183,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                         <div class="col-md-7 col-lg-7 section-md-t3">
                             <div class="row">
                                 <div class="col-sm-12">

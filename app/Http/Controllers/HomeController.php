@@ -145,7 +145,6 @@ class HomeController extends Controller
         $data->pickupTime = $request->input('pickupTime');
 
 
-        $data->price=$transfer->base_price * $transfer->km_price;
 
 
 
@@ -153,9 +152,12 @@ class HomeController extends Controller
         $data->IP = $_SERVER['REMOTE_ADDR'];
         $data->save();
 
-        return redirect()->route('transfer',['id'=>$transfer->id,'slug'=>$transfer->slug])->with('success','Rezervasyonunuz kaydedilmiştir');
+        return redirect()->route('reserveconfirm',['id'=>$transfer->id,'slug'=>$transfer->slug]);
     }
-
+    public function reserveconfirm(){
+        $setting=Setting::first();
+        return view('home.reservation_confirm',['setting'=>$setting]);
+    }
 
 
     public function faq(){

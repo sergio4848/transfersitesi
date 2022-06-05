@@ -48,6 +48,7 @@
                                         </p>
                                     </div>
                                     <div class="testimonial-author-box">
+                                        <h5 class="testimonial-author">FİYAT:{{$rs->transfer->base_price}} ₺</h5>
                                         <h5 class="testimonial-author">UÇUŞ TARİHİ:{{$rs->flightDate}}</h5>
                                     </div>
                                 </div>

@@ -38,6 +38,7 @@ Route::get('/transfer/{id}/{slug}', [HomeController::class, 'transfer'])->name('
 Route::post('/sendreview/{id}/{slug}', [HomeController::class, 'sendreview'])->name('sendreview');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::post('/sendreserve/{id}/{slug}', [HomeController::class, 'sendreserve'])->name('sendreserve');
+Route::get('/reserveconfirm', [HomeController::class, 'reserveconfirm'])->name('reserveconfirm');
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {

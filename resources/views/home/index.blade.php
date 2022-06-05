@@ -45,8 +45,8 @@
                                     </h2>
                                 </div>
                                 <div class="card-body-a">
-                                    <div class="price-box d-flex">
-                                        <span class="price-a">₺ {{$rs->price}}</span>
+                                    <div class="km_price-box d-flex">
+                                        <span class="km_price-a">₺ {{$rs->km_price}}</span>
                                     </div>
                                     <a href="{{route('transfer',['id' => $rs->id,'slug' => $rs->slug])}}" class="link-a">İncele
                                         <span class="ion-ios-arrow-forward"></span>
@@ -60,7 +60,7 @@
                                         </li>
                                         <li>
                                             <h4 class="card-info-title">Fiyat</h4>
-                                            <span>₺ {{$rs->price}}</span>
+                                            <span>₺ {{$rs->km_price}}</span>
                                         </li>
 
                                     </ul>
@@ -107,7 +107,7 @@
                                     </h2>
                                 </div>
                                 <div class="card-date">
-                                    <span class="date-b">₺ {{$rs->price}}</span>
+                                    <span class="date-b">₺ {{$rs->km_price}}</span>
                                 </div>
                             </div>
                         </div>
